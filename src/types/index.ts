@@ -9,6 +9,8 @@ export type EventType =
   | 'package_detected'
   | 'camera_offline'
   | 'camera_online'
+  | 'face_recognized'
+  | 'unknown_face'
 
 export interface Camera {
   id: string

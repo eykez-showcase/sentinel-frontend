@@ -59,6 +59,15 @@ export const api = {
     },
     floorplanUrl: () => '/api/v1/map/floorplan',
   },
+  faceCamera: {
+    getStatus: () => get<{
+      available: boolean
+      last_seen_name: string | null
+      last_seen_role: string | null
+      last_seen_confidence: number
+      last_seen_at: string | null
+    }>('/face-camera/status'),
+  },
   persons: {
     list: () => get<Person[]>('/persons'),
     create: (body: { name: string; role: string; notes?: string }) =>

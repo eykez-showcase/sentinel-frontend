@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { api } from '@/api/client'
 import { useSentinelStore } from '@/store'
 import { useWebSocket } from '@/hooks/useWebSocket'
-import { MapEditor } from '@/components/MapEditor/MapEditor'
+import { FaceCamera } from '@/components/FaceCamera/FaceCamera'
 import { EventFeed } from '@/components/EventFeed/EventFeed'
 import { CameraGrid } from '@/components/CameraGrid/CameraGrid'
 import { SummaryPanel } from '@/components/SummaryPanel/SummaryPanel'
@@ -74,9 +74,9 @@ export default function App() {
       {/* Main layout: map left (55%), cameras + events right (45%) */}
       <div className="flex flex-1 overflow-hidden">
 
-        {/* Left panel: interactive floor plan (55%) */}
+        {/* Left panel: face camera with live recognition (55%) */}
         <div className="w-[55%] shrink-0 border-r border-surface-border overflow-hidden flex flex-col">
-          <MapEditor />
+          <FaceCamera />
         </div>
 
         {/* Right panel: cameras top (60%) + events/summaries bottom (40%) */}
